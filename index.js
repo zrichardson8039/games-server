@@ -4,6 +4,8 @@ const http = require("http")
 const server = http.createServer(app)
 const { Server } = require("socket.io")
 
+const port = process.env.PORT || 5005
+
 const io = new Server(server, {
   cors: {
     origin: ["http://localhost:3000"],
@@ -24,6 +26,6 @@ io.on("connection", (socket) => {
   })
 })
 
-server.listen(5000, () => {
-  console.log("listening on *:5000")
+server.listen(port, () => {
+  console.log(`listening on *: ${port}`)
 })
