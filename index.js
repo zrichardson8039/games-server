@@ -8,10 +8,7 @@ const port = process.env.PORT || 5005
 
 const io = new Server(server, {
   cors: {
-    origin: [
-      "https://zachs-ai-games.web.app/tic-tac-toe",
-      "http://localhost:3000",
-    ],
+    origin: ["https://zachs-ai-games.web.app", "http://localhost:3000"],
     allowedHeaders: ["my-custom-header"],
     credentials: false,
   },
